@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodHunt</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        /* outline: 1px solid red; */
+    }
+    .card_item{
+    background: #e0e0e0;
+    box-shadow:  2px 2px 17px #9b9b9b,
+                -2px -2px 17px #ffffff;
+    }
+</style>
+<body style="background-color: #e0e0e0;" class="font-mono text-black">
+    <nav style="background-color: #e0e0e0;" class="fixed top-0 w-full flex justify-between shadow-md mx-auto lg:px-24 px-4 py-3">
+
+        <div class="">
+            <h2 class="text-center text-2xl text-orange-400 font-bold">FoodHunt</h2>
+        </div>
+
+
+        <div class="navbar h-2/6 top-14 bg-gray-200 left-0 hidden md:block">
+            <ul class="ul md:flex flex-col md:flex-row md:gap-10 text-lg font-semibold uppercase">
+                <li class="hover:text-orange-500 md:my-0 my-4">
+                    <a href="#">
+                        Home
+                    </a>
+                </li>
+                <li class="hover:text-orange-500 md:my-0 my-4">
+                    <a href="#">
+                        Menu
+                    </a>
+                </li>
+                <li class="hover:text-orange-500 md:my-0 my-4">
+                    <a href="#">
+                        About Us
+                    </a>
+                </li>
+                <li class="cartel hover:text-orange-500 md:my-0 my-4 relative cursor-pointer">
+                    <a href="#">
+                        <iconify-icon inline icon="iconoir:shopping-bag" class="text-2xl"></iconify-icon>
+                        <div class="cart_count w-4 h-4 border border-gray-100 bg-orange-500 absolute rounded-full left-3 top-0.5 ">
+                            <span class="absolute -top-0.5 right-0.5 text-sm"></span>
+                        </div>
+                        Cart
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="md:hidden">
+        <iconify-icon inline icon="iconoir:shopping-bag" class="cartel fixed top-3 text-3xl right-14 cursor-pointer"></iconify-icon>
+        <div class="cart_count w-4 h-4 border border-gray-100 bg-orange-500 fixed rounded-full right-14 top-4 ">
+            <span class="absolute -top-1 right-0.5"></span>
+        </div>
+    </div>
+        <iconify-icon icon="charm:menu-hamburger" class="hammenu md:hidden fixed top-3 text-3xl right-3"></iconify-icon>
+        <iconify-icon icon="ic:round-close" class="hamclose hidden fixed top-3 text-3xl right-3 md:hidden z-10"></iconify-icon>
+
+    <div class="cart_board hidden fixed top-14 right-0 lg:right-24 w-full md:w-96 bg-gray-200">
+        <h2 class="cartclose text-lg font-bold text-center border border-red-500 text-red-500 cursor-pointer">&times; Close Cart</h2>
+        <div class="cartitems"></div>
+        <div class="check">
+            <h3 class="flex justify-between px-5 text-lg font-semibold">Total:<span class="total">N0</span></h3>
+            <h2 class="checkout bg-orange-500 text-center text-xl font-bold py-2 cursor-pointer">CheckOut</h2>
+        </div>
+
+    </div>
+    <header class="md:mt-16 mt-0">
+        <div class="flex flex-col-reverse md:flex-row justify-center md:gap-5 md:px-24 px-4">
+            <div class="w-full md:w-2/4 flex flex-col justify-center">
+                <p class="font-semibold text-xl md:w-4/5">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quam a inventore illum enim incidunt dolorum provident dolores perspiciatis ut non!
+                </p>
+                <button class="bg-orange-500 w-44 md:w-56 my-3 px-1 md:px-5 py-1 md:py-3 font-bold text-lg md:text-xl cursor-pointer">
+                    SHOP NOW <iconify-icon inline icon="iconoir:shopping-bag-add" width="28"></iconify-icon>
+                </button>
+            </div>
+            <img src="photos/img_8989-removebg-preview.png" alt="" class="mt-4 w-full md:w-2/5 h-1/2" >
+        </div>
+    </header>
+   
+    <main>
+        <section>
+            <div class="menu mt-5 pt-5 mx-auto flex flex-col justify-center items-center">
+                <h2 class="text-center text-lg md:text-xl font-bold">Our Customer's Favourite Dishes</h2>
+                <div class="menu_cards mt-10 mx-auto w-full flex justify-center flex-wrap gap-7 md:gap-y-12">
+                    <div class="card_item lg:hover:-translate-y-3 w-11/12 h-96 md:w-5/12 lg:w-1/5">
+                        <img src="photos/img_8989.png" alt="" class="h-2/4 md:h-2/4 w-full">
+                        <div class="card_text pl-2 py-4">
+                            <h3 class="text-lg font-bold mb-3">Jollof Rice, Plantain And Chicken</h3>
+                            <h5 class="text-lg font-semibold">N1200</h5>
+                            <button class="addbtn mt-5 py-1 px-3 border-2 hover:bg-orange-500 border-dashed border-orange-500 text-base font-bold cursor-pointer">Add To Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="card_item lg:hover:-translate-y-3 w-11/12 h-96 md:w-5/12 lg:w-1/5">
+                        <img src="photos/fried_rice.jpg" alt="" class="h-3/5 md:h-2/4 w-full">
+                        <div class="card_text pl-2 py-4">
+                            <h3 class="text-lg font-bold mb-3">Fried Rice, Salad And Chicken</h3>
+                            <h5 class="text-lg font-semibold">N1300</h5>
+                            <button class="addbtn mt-5 py-1 px-3 border-2 hover:bg-orange-500 border-dashed border-orange-500 text-base font-bold cursor-pointer">Add To Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="card_item lg:hover:-translate-y-3 w-11/12 h-96 md:w-5/12 lg:w-1/5">
+                        <img src="photos/ewa-agoyin.jpg" alt="" class="h-3/5 md:h-2/4 w-full">
+                        <div class="card_text pl-2 py-4">
+                            <h3 class="text-lg font-bold mb-3">Ewa Agoyin And Agege Bread</h3>
+                            <h5 class="text-lg font-semibold">N700</h5>
+                            <button class="addbtn mt-5 py-1 px-3 border-2 hover:bg-orange-500 border-dashed border-orange-500 text-base font-bold cursor-pointer">Add To Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="card_item lg:hover:-translate-y-3 w-11/12 h-96 md:w-5/12 lg:w-1/5">
+                        <img src="photos/rice-and-stew.jpg" alt="" class="h-3/5 md:h-2/4 w-full">
+                        <div class="card_text pl-2 py-4">
+                            <h3 class="text-lg font-bold mb-3">Rice and Stew </h3>
+                            <h5 class="text-lg font-semibold">N1000</h5>
+                            <button class="addbtn mt-5 py-1 px-3 border-2 hover:bg-orange-500 border-dashed border-orange-500 text-base font-bold cursor-pointer">Add To Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card_item lg:hover:-translate-y-3 w-11/12 h-96 md:w-5/12 lg:w-1/5">
+                        <img src="photos/yam-chips-1.jpg" alt="" class="h-3/5 md:h-2/4 w-full">
+                        <div class="card_text pl-2 py-4">
+                            <h3 class="text-lg font-bold mb-3">Yam Chips and Sauce</h3>
+                            <h5 class="text-lg font-semibold">N800</h5>
+                            <button class="addbtn mt-5 py-1 px-3 border-2 hover:bg-orange-500 border-dashed border-orange-500 text-base font-bold cursor-pointer">Add To Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card_item lg:hover:-translate-y-3 w-11/12 h-96 md:w-5/12 lg:w-1/5">
+                        <img src="photos/spaghetti-jollof-1.jpg" alt="" class="h-3/5 md:h-2/4 w-full">
+                        <div class="card_text pl-2 py-4">
+                            <h3 class="text-lg font-bold mb-3">Spaghetti Jollof And Fish</h3>
+                            <h5 class="text-lg font-semibold">N1100</h5>
+                            <button class="addbtn mt-5 py-1 px-3 border-2 hover:bg-orange-500 border-dashed border-orange-500 text-base font-bold cursor-pointer">Add To Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card_item lg:hover:-translate-y-3 w-11/12 h-96 md:w-5/12 lg:w-1/5">
+                        <img src="photos/rice_and_beans.jpg" alt="" class="h-3/5 md:h-2/4 w-full">
+                        <div class="card_text pl-2 py-4">
+                            <h3 class="text-lg font-bold mb-3">Rice, Beans And Chicken</h3>
+                            <h5 class="text-lg font-semibold">N800</h5>
+                            <button class="addbtn mt-5 py-1 px-3 border-2 hover:bg-orange-500 border-dashed border-orange-500 text-base font-bold cursor-pointer">Add To Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card_item lg:hover:-translate-y-3 w-11/12 h-96 md:w-5/12 lg:w-1/5">
+                        <img src="photos/suya.jpg" alt="" class="h-3/5 md:h-2/4 w-full">
+                        <div class="card_text pl-2 py-4">
+                            <h3 class="text-lg font-bold mb-3">Suya</h3>
+                            <h5 class="text-lg font-semibold">N2000</h5>
+                            <button class="addbtn mt-5 py-1 px-3 border-2 hover:bg-orange-500 border-dashed border-orange-500 text-base font-bold cursor-pointer">Add To Cart</button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="mt-20">
+                <h2 class="text-center text-2xl md:text-4xl font-extrabold">How it works</h2>
+                <img src="photos/how-to-order.png" alt="" class="w-11/12 lg:w-3/5 mx-auto">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-600 w-full mt-10 md:mt-20 pb-24">
+        <div class="bg-gray-400 py-4 md:px-0 px-4 flex justify-center flex-col md:flex-row">
+            <h4 class="mr-6  text-center text-xl font-extrabold">Subscribe to our Newsletter</h4>
+            <input type="email" name="email" id="email" placeholder="Your Email" class="md:w-1/4 my-2 h-10 md:my-0 pl-1 outline-0">
+            <input type="submit" value="Subscribe" class="w-32 h-10 mx-auto md:mx-0 px-3 py-1 bg-orange-500 text-lg font-bold cursor-pointer">
+        </div>
+        <div class="flex flex-col md:flex-row justify-between gap-5 md:gap-10 px-4 md:px-20 pt-5">
+            <div>
+                <h3 class="text-white text-xl font-extrabold">Our Locations</h3>
+                <ul class="text-white text-base">
+                    <li>Lagos</li>
+                    <li>Abuja</li>
+                    <li>Ibadan</li>
+                    <li>Ogun</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-white text-xl font-extrabold">Contact Us</h3>
+                <ul class="text-white text-base">
+                    <li>
+                        <a href="tel:08107456097">08123456789</a>
+                    </li>
+                    <li>
+                        <a href="#">foodhunt@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-white text-xl font-extrabold">FoodHunt</h3>
+                <ul class="text-white text-base">
+                    <li>About Us</li>
+                    <li>FAQ</li>
+                    <li>Terms and Conditions</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-white text-xl font-extrabold">Follow Us</h3>
+                <ul class="text-white text-base">
+                    <li>Instagram</li>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="main.js"></script>
+</body>
+</html>
